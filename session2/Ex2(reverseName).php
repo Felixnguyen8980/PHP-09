@@ -1,8 +1,3 @@
-<!-- reversename Function
-example : Nguyen Tan Nam to Nguyen Nam Tan
-created by Namnguyen
-created on 20:00 03/10/2017 -->
-
 <!DOCTYPE html>
 <html>
 <head>

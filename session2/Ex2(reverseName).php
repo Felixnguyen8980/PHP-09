@@ -1,3 +1,8 @@
+<!-- reversename Function
+example : Nguyen Tan Nam to Nguyen Nam Tan
+created by Namnguyen
+created on 20:00 03/10/2017 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,21 +14,25 @@
 		<input type="submit" name="submit">
 </form>
 <?php
+	
+	
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$varA = $_POST['variable'];
 		reverseName($varA);
 		
 	}
-
+	// reversename Function
+	// example : Nguyen Tan Nam to Nguyen Nam Tan
+	// created by BiBiBitTut
+	// created on 20:00 03/10/2017 
 	function reverseName($name){
 		$arrName = explode(" ",$name);
 		$lastNamePosition = count($arrName);
 		$tmp = $arrName[$lastNamePosition -1];
 		$arrName[$lastNamePosition -1] = $arrName[$lastNamePosition -2];
 		$arrName[$lastNamePosition -2] = $tmp;
-		foreach ($arrName as $key => $value) {
-			echo $value." ";
-		}
+		$newName = implode(" ", $arrName);
+		echo $newName;
 	}
 ?>
 </body>

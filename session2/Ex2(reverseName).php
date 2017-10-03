@@ -23,9 +23,9 @@
 	function reverseName($name){
 		$arrName = explode(" ",$name);
 		$lastNamePosition = count($arrName);
-		$tmp = $arrName[$lastNamePosition -1];
-		$arrName[$lastNamePosition -1] = $arrName[$lastNamePosition -2];
-		$arrName[$lastNamePosition -2] = $tmp;
+		$tmp = $arrName[$lastNamePosition - 1];
+		$arrName[$lastNamePosition - 1] = $arrName[$lastNamePosition - 2];
+		$arrName[$lastNamePosition - 2] = $tmp;
 		$newName = implode(" ", $arrName);
 		echo $newName;
 	}

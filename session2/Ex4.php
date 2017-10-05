@@ -27,11 +27,10 @@
 	  	    if ($age <= 18) {
 	  	    	echo "check your age! <br>";
 	  	    }
-	  	    $kt=1;
 	  	    $checkEmail1 = explode('@',  $email);
 	  	    if (count($checkEmail1) == 2) {
 	  	    	$pos1 = strpos('@', $email);
-	  	    	$pos2 = strpos('@', $email,$pos1);
+	  	    	$pos2 = strpos('.', $email,$pos1);
 	  	    	if ($pos2 > 0) {
 
 	  	    	} else {

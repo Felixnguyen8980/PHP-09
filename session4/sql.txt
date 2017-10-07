@@ -4,15 +4,17 @@ INNER JOIN orders
 ON	customers.customerID = orders.customerID
 WHERE	orderDate LIKE "____-06%"
 
-SELECT firstName, lastName
-FROM customers
+SELECT city 
+FROM addresses 
+INNER JOIN customers 
+ON addresses.customerID = customers.customerID 
 WHERE emailAddress LIKE "%@gmail.%"
 
 SELECT `emailAddress` 
 FROM `customers` 
 INNER JOIN addresses
 ON customers.customerID = addresses.customerID
-LIMIT 0,30
+WHERE city ="Beaverton"
 
 
 SELECT productName 

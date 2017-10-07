@@ -6,7 +6,7 @@ SELECT firstName, lastName
 FROM customers
 INNER JOIN orders 
 ON	customers.customerID = orders.customerID
-WHERE	orderDate LIKE "____-06%"
+WHERE	orderDate LIKE "2014-06%"
 
 SELECT city 
 FROM addresses 

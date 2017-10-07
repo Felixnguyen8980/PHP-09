@@ -1,0 +1,22 @@
+SELECT firstName, lastName 
+FROM customers
+INNER JOIN orders 
+ON	customers.customerID = orders.customerID
+WHERE	orderDate LIKE "____-06%"
+
+SELECT firstName, lastName
+FROM customers
+WHERE emailAddress LIKE "%@gmail.%"
+
+SELECT `emailAddress` 
+FROM `customers` 
+INNER JOIN addresses
+ON customers.customerID = addresses.customerID
+LIMIT 0,30
+
+
+SELECT productName 
+FROM products
+INNER JOIN categories
+ON products.categoryID = categories.categoryID
+WHERE categoryName LIKE "%a%" AND listPrice > 500

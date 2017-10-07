@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#container{
+	margin: 10px auto;
+	border: 1px solid black;
+	box-shadow: 3px 3px 3px;
+	width: 500px;
+	padding: 10px;
+}
+#container p{
+	display: inline-block;
+	width: 10%;
+}
+#container input{
+	margin-left: 20px;
+}
+#container .btnbox{
+	margin: 10px auto;
+	text-align: center;
+}
+#container h2{
+	margin-bottom: 10px;
+}

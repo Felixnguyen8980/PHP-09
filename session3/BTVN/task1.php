@@ -43,15 +43,44 @@
 			$Age = $_POST['Age'];
 			$email = $_POST['email'];
 			$Class = $_POST['Class'];
+			$kt = 1;
+			if (empty($name)) {
+				echo "check your name! <br>";
+				$kt = 0;
+			}
+			if (empty($Class)) {
+				echo "check your class! <br>";
+				$kt = 0;
+			}
+			if ($Age <= 18) {
+				echo "check your age! <br>";
+				$kt = 0;
+			}
+			$checkEmail1 = explode('@',  $email);
+			if (count($checkEmail1) == 2) {
+				$pos1 = strpos($email,'@');
 
-	       
-			$sql = "INSERT INTO `user` (`name`, `Age`, `email`, `Class`) VALUES ('$name', '$Age', '$email', '$Class')" ;
-			if (mysqli_query($conn, $sql)) {
-				echo "New record created successfully";
+				$pos2 = strpos($email,'.',$pos1);
+				if ($pos2 > 0) {
+				} else {
+				echo "check your mail! <br>";
+				$kt = 0;
+				}
 			} else {
-				echo "Error :" . $sql . "<br>" .mysqli_error($conn);
+				echo "check your mail! <br>";
+				$kt = 0;
+			}
+
+	       		if ($kt ==1){
+				$sql = "INSERT INTO `user` (`name`, `Age`, `email`, `Class`) VALUES ('$name', '$Age', '$email', '$Class')" ;
+				if (mysqli_query($conn, $sql)) {
+					echo "New record created successfully";
+				} else {
+					echo "Error :" . $sql . "<br>" .mysqli_error($conn);
+				}
 			}
 		}
+			
 
 		if (isset($_POST['showdata'])){
 			$sql = "SELECT * FROM `user` where 1";

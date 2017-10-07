@@ -14,7 +14,7 @@ INNER JOIN customers
 ON addresses.customerID = customers.customerID 
 WHERE emailAddress LIKE "%@gmail.%"
 
-SELECT `emailAddress` 
+SELECT DISTINCT `emailAddress` 
 FROM `customers` 
 INNER JOIN addresses
 ON customers.customerID = addresses.customerID

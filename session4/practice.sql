@@ -1,3 +1,7 @@
+-- 1. Lấy ra họ và tên của những khách hàng mua hàng trong tháng 6/2014
+-- 2. Lấy ra tên thành phố của khách hàng dùng gmail
+-- 3. Lấy ra email của khách hàng ở thành phố 'Beaverton'
+-- 4. Lấy ra danh sách sản phẩm thuộc danh mục có tên chứa chữ 'a' và có giá lớn hơn 500$
 SELECT firstName, lastName 
 FROM customers
 INNER JOIN orders 

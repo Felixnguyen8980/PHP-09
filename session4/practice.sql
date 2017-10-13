@@ -2,6 +2,7 @@
 -- 2. Lấy ra tên thành phố của khách hàng dùng gmail
 -- 3. Lấy ra email của khách hàng ở thành phố 'Beaverton'
 -- 4. Lấy ra danh sách sản phẩm thuộc danh mục có tên chứa chữ 'a' và có giá lớn hơn 500$
+--Lấy ra tên khách hàng mua sản phẩm có tên là 'Gibson Les Paul'--
 SELECT firstName, lastName 
 FROM customers
 INNER JOIN orders 
@@ -26,3 +27,14 @@ FROM products
 INNER JOIN categories
 ON products.categoryID = categories.categoryID
 WHERE categoryName LIKE "%a%" AND listPrice > 500
+
+
+SELECT lastName,firstName 
+FROM customers 
+INNER JOIN orders 
+ON customers.customerID = orders.customerID 
+INNER JOIN orderItems 
+ON orders.orderID = orderItems.orderID 
+INNER JOIN products 
+ON orderItems.productID = products.productID 
+WHERE productName = 'Gibson Les Paul'

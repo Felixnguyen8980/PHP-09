@@ -1,0 +1,7 @@
+.row{
+	display: flex;
+}
+.col-5{
+	max-width: 50%;
+	min-width: 50%;
+}

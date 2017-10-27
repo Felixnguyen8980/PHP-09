@@ -1,0 +1,26 @@
+table.users {
+    width: 100%;
+}
+
+table.users thead {
+    background-color: #eee;
+    text-align: left;
+}
+
+table.users thead th {
+    border: solid 1px #fff;
+    padding: 3px;
+}
+
+table.users tbody td {
+    border: solid 1px #eee;
+    padding: 3px;
+}
+
+a, a:hover, a:active, a:visited {
+    color: blue;
+    text-decoration: underline;
+}
+.errors{
+    color: red;
+}

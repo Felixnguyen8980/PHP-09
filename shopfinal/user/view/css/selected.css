@@ -1,0 +1,12 @@
+ul{
+	list-style-type: none;
+}
+.selected li{
+	padding: 5px;
+}
+.boxselected{
+	width: 100%;
+	padding: 6px;
+	font-size: 15px;
+	align-items: center;
+}

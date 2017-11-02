@@ -6,6 +6,7 @@ class categories{
 	public $total;
 	public $categoriespage;
 	public $limit=5;
+	public $list_product_categories;
 }
 class admin_controller extends categories{
 	public $subview1='';
@@ -21,7 +22,7 @@ class admin_controller extends categories{
 			} elseif ($op=='out') {
 				$this->logout();
 			} elseif ($op=='listproducts') {
-				$this->viewlist();
+				$this->viewProduct();
 			} elseif ($op=='addproducts') {
 				$this->addproducts();
 			} elseif ($op=='categories') {
@@ -49,22 +50,26 @@ class admin_controller extends categories{
 			$logout = $adminMode->logout();
 			header("Location: index.php");
 	}
-	public function viewlist(){
+	public function viewProduct(){
 		$adminMode = new adminModel(); 
-		$view = $adminMode->viewlist();
+		$table = 
+		$result = $adminMode->view();
+		$this->subview1 = "view/products.php";
+		$this->mainview();
 	}
 	public function addproducts(){
+		$adminMode = new adminModel(); 
+		$this->list_product_categories = $adminMode->select_total('product_categories');
+		$add = $adminMode->addproducts();
 		$includeview ='view/addproducts.php'; 
 		$this->subview1 = $includeview;
 		$this->mainview();
-		$adminMode = new adminModel(); 
-		$add = $adminMode->addproducts();
 	}
 	public function categories($categoriespage){
 		$includeview ='view/categories.php'; 
 		$adminMode = new adminModel(); 
-		$view = $adminMode->viewcategories($categoriespage,$this->limit);
 		$add = $adminMode->addcategories();
+		$view = $adminMode->viewcategories($categoriespage,$this->limit);
 		$this->subview1 = $includeview;
 		$this->subview2 = $view;
 		$this->total = $adminMode->countdata($database='product_categories');

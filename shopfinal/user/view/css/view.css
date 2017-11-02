@@ -1,0 +1,14 @@
+#Selected{
+	position: relative;
+}
+#loginform{
+	position: absolute;
+	top:300px;
+	text-align: center;
+	left: 35%;
+	background-color: grey;
+	box-shadow: 2px 2px 2px;
+	border-radius: 15px;
+	width: 30%;
+	margin-bottom: 10px;
+}

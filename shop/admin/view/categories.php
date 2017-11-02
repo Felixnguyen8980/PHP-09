@@ -21,6 +21,7 @@
 			</div>
 			<div class="col-md-6">
 				<h2>List Categories</h2>
+
 				<div>
 					<table class="Categories" border="0" cellpadding="2px" cellspacing="0">
 						<thead>

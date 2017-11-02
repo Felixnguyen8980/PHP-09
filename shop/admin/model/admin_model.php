@@ -18,11 +18,34 @@ class adminModel extends connectDB {
 		unset($_SESSION['admin']);
 	}
 	public function viewlist(){
+		include 'view/products.php';
 		$sqlview = "SELECT * FROM products";
 	}
 	public function addproducts(){
 		if(isset($_POST['submit'])){
+			$table = 'products';
+			$name = $_POST['product_name'];
+			$category = $_POST['category_id'];
+			$description = $_POST['description'];
+			$price = $_POST['price'];
+			$target_dir = "../uploads/image/";
+			$created=date("Y-m-d");
+			$image = strtotime("now").$_FILES["image"]["name"];
+			$target_file = $target_dir.$image;
+			$sql = "INSERT INTO `products`(`category_id`, `name`, `description`, `price`, `image`, `created`) VALUES ('$category','$name','$description','$price','$image','$created')" ;
+			mysqli_query($this->conn,$sql);
+			if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+		        echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+		    } else {
+		        echo "Sorry, there was an error uploading your file.";
+		    }
+			unset($_POST['submit']);
 		}
+	}
+	public function select_total($table){
+		$sql = "SELECT * FROM $table";
+		$result = mysqli_query($this->conn,$sql);
+		return $result;
 	}
 	public function addcategories(){
 		if(isset($_POST['submit'])){

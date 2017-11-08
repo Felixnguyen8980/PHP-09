@@ -18,7 +18,7 @@
 			?>
 			<div class="row boxselected" >
 				<div class="col-md-3 text-center"><?php echo $Obj->name;?></div>
-				<div class="col-md-3 text-center"><img src="admin/public/uploads/<?php echo $Obj->image ?>" style="width:50px;height: 50px;"></div>
+				<div class="col-md-3 text-center"><img src="admin/public/uploads/<?php echo $Obj->images ?>" style="width:50px;height: 50px;"></div>
 				<div class="col-md-2 text-center"><?php echo $Obj->price;?></div>
 				<div class="col-md-2 text-center"><?php echo $selected['quantity']; ?></div>
 				<div class="col-md-2 text-center">

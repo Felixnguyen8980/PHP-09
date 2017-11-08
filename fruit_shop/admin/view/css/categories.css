@@ -1,0 +1,9 @@
+#newType {
+	margin-top:30px;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 5px;
+    border-color: gray;
+}

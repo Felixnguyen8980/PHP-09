@@ -24,7 +24,17 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php?op=home">Home</a></li>
-        <li><a href="index.php?op=products">Products</a></li>
+        <li><a href="index.php?op=products" >Products</a></li>
+        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories</a>
+             <ul class="dropdown-menu" id="menudrop3">
+               <?php
+                  $list = $this->view('categories');
+                  foreach ($list as  $value) { ?>
+                     <li><a href="index.php?op=products&categories=<?php echo $value->id; ?>"><?php echo $value->name; ?></a></li>
+                <?php  } 
+               ?>
+             </ul>
+        </li>
         <li><a href="#">Deals</a></li>
         <li><a href="#">Stores</a></li>
         <li><a href="#">Contact</a></li>
@@ -101,9 +111,6 @@
 </nav>
 
 <?php include $viewOption;?>
-<?php
-  include 'user/common/footer.php';
-?>
 <div id="loginform" style="display: none;">
     <div class="box">
       <div class="row title"></div>

@@ -1,0 +1,30 @@
+.row{
+	margin-top:10px;
+}
+table {
+	width: 100%;
+    display: table;
+    border-collapse: collapse;
+    /*border-spacing: 10px;*/
+    border-color: gray;
+}
+table {
+    border: 1px solid black;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+tr:nth-child(even) {
+    background-color: #eee;
+}
+tr:nth-child(odd) {
+   background-color:#fff;
+}
+th {
+    background-color: black;
+    color: white;
+}
+.page{
+	text-align: center;
+}

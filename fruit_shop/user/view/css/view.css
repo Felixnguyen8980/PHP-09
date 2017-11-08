@@ -18,3 +18,14 @@
 #menudrop2{
 	width: 500px;
 }
+#menudrop3{
+	width: 500px;
+	background-color: black;
+
+}
+#menudrop3 a{
+	color: white;
+}
+#menudrop3 li:hover a{
+	color: black;
+}

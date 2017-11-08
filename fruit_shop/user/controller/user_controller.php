@@ -19,6 +19,9 @@ class userController {
 			case 'buythemall':
 			 	$this->buythemall();
 			break;
+			case 'showproduct':
+			 	$this->showproduct();
+			break;
 			default:
 				# code...
 				break;
@@ -46,5 +49,10 @@ class userController {
 		$model = new UserModel();
 		$model-> buythemall();
 	}
+	public function showproduct(){
+		$model = new UserModel();
+		$model-> showproduct();
+	}
+
 }
 ?>
